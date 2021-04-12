@@ -1,0 +1,22 @@
+siteInfo.txt
+
+url= "http://homepages.shu.ac.uk/~b4026317/wadWebsite/index.html";
+administrator username= "admin";
+administrator password=	"qwerty";
+
+
+==third-party plugins==
+jQuery
+url= "https://jquery.com/"
+
+dateTimePicker
+url= "https://github.com/xdan/datetimepicker";
+
+googleMapsApi
+url= "https://developers.google.com/maps/documentation/javascript/";
+
+==resources used==
+*php.net
+*StackOverflow
+*w3Schools
+*The Tutorials

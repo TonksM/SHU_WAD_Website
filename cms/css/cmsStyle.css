@@ -1,0 +1,160 @@
+body{
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	background-color: #999999;
+	margin: 0;
+	padding: 0;
+}
+#container{
+	width: 1150px;
+	min-height: 100%;
+	overflow-y: hidden;
+	margin: 0px auto;
+}
+#header{
+	width:1100px;
+	margin: 0 25px 0 25px;
+	height: 42px;
+	background-color: #ffffff;
+	border-bottom: 2px solid #000000;
+}
+#nav{
+	position: relative;
+	padding: 1px 0 0 0;
+}
+#nav ul{
+	list-style: none;
+}
+#nav li{
+	float: left;
+}
+#nav a{
+	text-decoration: none;
+	color: #555555;
+	font-weight: bold;
+	padding: 10px 25px 5px 25px;
+}
+#nav a:hover{
+	background-color: #F88000;
+	color: #000000;
+}
+#main{
+	width:1095px;
+	margin: -5px 25px 0 25px;
+	background-color: #ffffff;
+	padding: 5px 0 0 5px;
+	min-height: 100%;
+	overflow-y: hidden;
+	border-top: 3px solid #090909;
+	text-align: center;
+}
+#main h1{
+	font-size: 20px;
+	margin: 5px 0 0 5px;
+}
+#main h2{
+	font-size: 16px;
+	margin: 5px 0 0 5px;
+}
+#main h3{
+	font-size: 14px;
+	margin: 5px 0 0 5px;
+}
+#main h3 a{
+	color: #555555;
+	text-decoration: none;
+}
+#main h3 a:hover{
+	color: #000000;
+	background-color: #F88000;
+}
+#main p{
+	font-size: 14px;
+	margin: 2px 5px 3px 5px;
+}
+#main table{
+	text-align: center;
+	margin: 5px auto;
+	border: 1px solid #555555;
+}
+#main table a{
+	padding: 5px auto;
+	color: #555555;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 0 5px 0 5px;
+}
+#main table a:visited{
+	color: #d88000;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 0 5px 0 5px;
+}
+#main table a:hover{
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	background-color: #f88000;
+	padding: 2px 5px 2px 5px;
+}
+#main table tr{
+	text-align: center;
+}
+#main table th{
+	background-color: #f88000;
+	border: 1px solid #555555;
+}
+#main table td{
+	padding: 2px 10px 2px 10px;
+	border: 1px solid #555555;
+}
+#main table td a{
+	margin: 0 5px 0 5px;
+}
+#content{
+	width: 1080px;
+	float: left;
+	background-color: #ffffff;
+	padding: 5px 0px 0 5px;
+	margin: 0 3px 0 0;
+	min-height: 100%;
+	overflow-y: hidden;
+}
+#content ul{
+	list-style: none;
+	font-size: 16px;
+	font-weight: bold;
+}
+#content a{
+	color: #555555;
+	text-decoration: none;
+	padding: 2px 10px 2px 10px;
+}
+#content a:hover{
+	color: #000000;
+	background-color: #f88000;
+}
+#content-filmpageleft{
+	float: left;
+	text-align: center;
+	width: 33%;
+	padding: 5px 0 5px 0;
+}
+#content-filmpageleft img{
+	width: 90%;
+	height: 90%;
+}
+#content-filmpageright{
+	float: left;
+	text-align: left;
+	width: 66%;
+	border-bottom: 1px solid #090909;
+	padding: 5px 0 5px 0;
+}
+#content-filmpageright table{
+	width: 100%;
+	margin: 0 0 0 0;
+}
+#content-filmpageright table td{
+	text-align: left;
+}

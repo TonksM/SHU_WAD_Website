@@ -1,0 +1,45 @@
+<?php session_start();?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<?php include('./php/head.inc.php');?>
+		<title>Planet Nine - <?php 
+								if(!isset($_SESSION['login']))
+								{?>
+									Login
+								<?php }else{ 
+								?>
+									Logout
+								<?php } 
+								?></title>
+	</head>
+	<body>
+		<div id="container">
+			<?php include('./php/header.inc.php');?><!--"header" include-->
+			<div id="main">
+				<div id="login">
+					<?php 
+					if(!isset($_SESSION['login']))
+					{
+					?>
+					<form id="loginForm" name="loginForm" method="post" action="processes/login.php">
+						<h2>Login</h2>
+						<p>&nbsp;</p>
+						<p><label for="username">Username:&nbsp;</label>
+						<input name="username" id="username" type="text"></input></p>
+						<p><label for="password">Password:&nbsp;&nbsp;</label>
+						<input name="password" id="password" type="password"></input></p>
+						<input type="submit" name="Submit" id="Submit" value="Login"><input type="reset" name="Clear" id="Clear" value="Reset">
+						<p>&nbsp;</p>
+					</form>
+					<?php }else{ ?>
+						<h2>Login Successful</h2>
+						<p><form id="logoutForm" name="logoutForm" method="post" action="processes/logout.php">
+							<input type="submit" name="Submit" id="Submit" value="Logout"></p>
+					<?php }?>
+				</div>
+			</div><!--END "main"-->
+			<?php include('./php/footer.inc.php');?><!--"footer" include-->
+		</div><!--END "container"-->
+	</body>
+</html>

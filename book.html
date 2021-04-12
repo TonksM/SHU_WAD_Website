@@ -1,0 +1,86 @@
+<?php
+	session_start();
+	require('./includes/conn.inc.php');
+	$queryFilms = "SELECT movieNo, movieTitle FROM movies ORDER BY movieTitle asc";
+	$resultFilms = $mysqli->query($queryFilms);
+	$queryLocations = "SELECT locationNo, locationName, city FROM location ORDER BY city asc";
+	$resultLocations = $mysqli->query($queryLocations);
+?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<?php include('./php/head.inc.php');?>
+		<title>Planet Nine - Book a viewing</title>
+	</head>
+	<body>
+		<div id="container">
+			<?php include('./php/header.inc.php');?><!--"header" include-->
+			<div id="main">
+				<div id="content">
+					<h1>Event booking</h1>
+					<table>
+						<form action="processes/newBooking.php" method="post">
+							<tr>
+								<th><label for="name">Name:&nbsp;</label></th>
+								<td><input size="25" maxlenght="70" type="text" name="name" id="name" placeholder="Name"></td>
+							</tr>
+							<tr>
+								<th><label for="email">Email:&nbsp;</label></th>
+								<td><input size="25" maxlenght="70" type="text" name="email" id="email" placeholder="email@example.com"></td>
+							</tr>
+							<tr>
+								<th><label for="telephone">Telephone:&nbsp;</label></th>
+								<td><input size="25" maxlength="11" type="text" name="telephone" id="telephone" placeholder="0xxxxxxxxxx"></td>
+							</tr>
+							<tr>
+								<th><label for="location">Location:&nbsp;</label></th>
+								<td><?php
+									echo "<select name=\"locationNo\" id=\"locationNo\">";
+									echo "<option value=\"\">Select Location...</option>";
+									while($rowLocs = $resultLocations->fetch_assoc())
+									{
+										echo "<option value=\"{$rowLocs['locationNo']}\">
+										{$rowLocs['city']}
+										{$rowLocs['locationName']}</option>";
+									}
+								?></td>
+							</tr>
+							<tr>
+								<th><label for="movies">Movie:&nbsp;</label></th>
+								<td><?php
+									echo "<select name=\"movieNo\" id=\"movieNo\">";
+									echo "<option value=\"\">Select movie...</option>";
+									while($rowFilms = $resultFilms->fetch_assoc())
+									{
+										echo "<option value=\"{$rowFilms['movieNo']}\">
+										{$rowFilms['movieTitle']}</option>";
+									}
+								?></td>
+							</tr>
+							<tr>
+								<th><label for="time">Time:&nbsp;</label></th>
+								<td><input type="text" name="timepicker" id="timepicker"></td>
+							</tr>
+							<tr>
+								<th><label for="date">Date:&nbsp;</label></th>
+								<td><input type="text" name="datepicker" id="datepicker"></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><p><input type="submit" name="bookButton" id="bookButton" value="Submit"><input type="reset" name="clearForm" id="clearForm" value="Clear"></p></td>
+							</tr>
+						</form>
+					</table>
+				</div><!--END "content"-->
+				<div id="sidebar">
+					<h2>Vader solo empire</h2>
+					<p>Lucas ipsum dolor sit amet moff ben twi'lek sidious obi-wan chewbacca calamari fett skywalker padmé. Organa hutt skywalker solo boba. Fett darth amidala moff darth ben antilles watto darth. Windu hutt darth endor darth palpatine coruscant organa. Boba qui-gonn boba mara organa yoda owen..</p>
+				</div><!--END "sidebar"-->
+			</div><!--END "main"-->
+			<?php include('./php/footer.inc.php');?><!--"footer" include-->
+		</div><!--END "container"-->
+				<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">
+		<script type="text/javascript" src="js/jquery.datetimepicker.full.min.js"></script>
+		<script type="text/javascript" src="js/dateTime.js"></script>
+	</body>
+</html>
